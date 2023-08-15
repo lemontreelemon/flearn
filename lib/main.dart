@@ -73,7 +73,17 @@ class _MyHomePageState extends State<MyHomePage> {
            Navigator.of(context).pushNamed("/inherited/home");
          }, child: Text(
            "使用 inherited"
-         ))
+         )),
+         Divider(height: 10,),
+         Container(
+           margin: EdgeInsets.symmetric(vertical: 0.0,horizontal: 12.0),
+           child: ElevatedButton(
+             onPressed: (){
+               Navigator.of(context).pushNamed("/provider/home");
+             },
+             child: Text("使用 provider"),
+           ),
+         )
        ],
      ),
    );

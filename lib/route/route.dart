@@ -1,5 +1,4 @@
 
-import 'package:flearn/inheritedpak/counter_inherited_widget.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../inheritedpak/inherited_home.dart';
@@ -10,6 +9,7 @@ Map<String,WidgetBuilder> getRouters(){
   return <String,WidgetBuilder>{
     "/":(context) => MyHomePage(),
     "/provider/home" : (context) => ProviderHome(),
-    "/inherited/home":(context) => InheritedHome()
+    "/inherited/home":(context) => InheritedHome(),
+    "/provider/home":(context) => ProviderHome()
   };
 }
