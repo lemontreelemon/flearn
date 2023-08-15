@@ -69,6 +69,11 @@ class _MyHomePageState extends State<MyHomePage> {
              ),
            ),
          ),
+         ElevatedButton(onPressed: (){
+           Navigator.of(context).pushNamed("/inherited/home");
+         }, child: Text(
+           "使用 inherited"
+         ))
        ],
      ),
    );

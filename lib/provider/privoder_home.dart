@@ -13,7 +13,7 @@ class _ProviderHomeState extends State<ProviderHome> {
   Widget build(BuildContext context) {
     print("build");
     return Scaffold(
-      appBar: AppBar(title: Text("你好"),),
+      appBar: AppBar(title: Text("provider"),),
       body: Placeholder(),
     );
   }
