@@ -83,6 +83,16 @@ class _MyHomePageState extends State<MyHomePage> {
              },
              child: Text("使用 provider"),
            ),
+         ),
+         Divider(height: 10,),
+         Container(
+           margin: EdgeInsets.symmetric(vertical: 0.0,horizontal: 12.0),
+           child: ElevatedButton(
+             onPressed: (){
+               Navigator.of(context).pushNamed("/plugin/home");
+             },
+             child: Text("使用 methodChannel"),
+           ),
          )
        ],
      ),

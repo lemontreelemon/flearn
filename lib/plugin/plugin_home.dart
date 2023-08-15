@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flearn/plugin/plugin_version_model.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -14,11 +15,14 @@ class PluginHomePage extends StatefulWidget {
 
 class _PluginHomePageState extends State<PluginHomePage> {
 
+  var versionModel = VersionModel();
+
   @override
   void initState() {
     super.initState();
     //延时任务，之后获取数据
-    _getVersion();
+    versionModel.getVersion();
+    Future.delayed(Duration(seconds: 5),);
   }
 
   @override
@@ -28,8 +32,8 @@ class _PluginHomePageState extends State<PluginHomePage> {
         title: Text("plugin"),
         centerTitle: true,
       ),
-      body: ChangeNotifierProvider(
-        create: (ctx){},
+      body: ChangeNotifierProvider.value(
+        value:versionModel,
         child: Container(
           width: double.infinity,
           height: double.infinity,
@@ -49,10 +53,4 @@ class _PluginHomePageState extends State<PluginHomePage> {
     );
   }
 
-  Future<void> _getVersion() async {
-    sleep(Duration(seconds: 5));
-    //直接创建 methodchannel
-    var channel = MethodChannel("flutter_version");
-    var version = await channel.invokeListMethod("getVersion");
-  }
 }
