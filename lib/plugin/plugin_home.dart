@@ -22,7 +22,6 @@ class _PluginHomePageState extends State<PluginHomePage> {
     super.initState();
     //延时任务，之后获取数据
     versionModel.getVersion();
-    Future.delayed(Duration(seconds: 5),);
   }
 
   @override

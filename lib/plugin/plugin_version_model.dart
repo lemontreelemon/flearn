@@ -13,15 +13,21 @@ class VersionModel with ChangeNotifier{
     notifyListeners();
   }
 
-  Future<void> getVersion() async {
-
-    //直接创建 methodchannel
-    var channel = MethodChannel("flutter_version");
-    var version = await channel.invokeMethod<String?>("getVersion");
-    Future.delayed(Duration(seconds: 5),(){
-      this.verison = version!;
-      notifyListeners();
-    });
-  }
+  // Future<void> getVersion() async{
+  //   //直接创建 methodchannel
+  //   var channel = MethodChannel("flutter_version");
+  //   Future.delayed(Duration(seconds: 5),(){
+  //     print("delay 的方法");
+  //   }).then((value){
+  //     print("value == $value");
+  //     print("delay 的 then 方法");
+  //     return channel.invokeMethod<String?>("getVersion");
+  //   }).then((value){
+  //     print("delay 的 last 方法");
+  //     this.verison = value??"";
+  //     notifyListeners();
+  //   }).catchError((error){
+  //   });
+  // }
 
 }
